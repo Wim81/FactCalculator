@@ -52,10 +52,100 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 final String init_value = text_calculation.getText().toString();
                 final String new_value = init_value + "0";
-                /*Toast.makeText(MainActivity.this, new_value, Toast.LENGTH_LONG).show();*/
                 text_calculation.setText(new_value);
             }
         });
+
+        input_1 = (Button) findViewById(R.id.button_1);
+        input_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "1";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_2 = (Button) findViewById(R.id.button_2);
+        input_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "2";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_3 = (Button) findViewById(R.id.button_3);
+        input_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "3";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_4 = (Button) findViewById(R.id.button_4);
+        input_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "4";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_5 = (Button) findViewById(R.id.button_5);
+        input_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "5";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_6 = (Button) findViewById(R.id.button_6);
+        input_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "6";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_7 = (Button) findViewById(R.id.button_7);
+        input_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "7";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_8 = (Button) findViewById(R.id.button_8);
+        input_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "8";
+                text_calculation.setText(new_value);
+            }
+        });
+
+        input_9 = (Button) findViewById(R.id.button_9);
+        input_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                final String new_value = init_value + "9";
+                text_calculation.setText(new_value);
+            }
+        });
+
 
     }
 }
