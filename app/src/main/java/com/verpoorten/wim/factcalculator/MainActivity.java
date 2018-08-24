@@ -165,37 +165,37 @@ public class MainActivity extends AppCompatActivity {
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 + getal2;
-                    String new_value = Integer.toString(uitkomst) + "+";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 + getal2;
+                    String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("-") ) {
 
                     String getallen[] = init_value.split("-");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 - getal2;
-                    String new_value = Integer.toString(uitkomst) + "+";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 - getal2;
+                    String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("x") ) {
 
                     String getallen[] = init_value.split("x");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 * getal2;
-                    String new_value = Integer.toString(uitkomst) + "+";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 * getal2;
+                    String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains(":") ) {
 
                     String getallen[] = init_value.split(":");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 / getal2;
-                    String new_value = Integer.toString(uitkomst) + "+";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 / getal2;
+                    String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
                 } else {
@@ -214,37 +214,37 @@ public class MainActivity extends AppCompatActivity {
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 + getal2;
-                    String new_value = Integer.toString(uitkomst) + "-";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 + getal2;
+                    String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("-") ) {
 
                     String getallen[] = init_value.split("-");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 - getal2;
-                    String new_value = Integer.toString(uitkomst) + "-";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 - getal2;
+                    String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("x") ) {
 
                     String getallen[] = init_value.split("x");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 * getal2;
-                    String new_value = Integer.toString(uitkomst) + "-";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 * getal2;
+                    String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains(":") ) {
 
                     String getallen[] = init_value.split(":");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 / getal2;
-                    String new_value = Integer.toString(uitkomst) + "-";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 / getal2;
+                    String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
                 } else {
@@ -263,37 +263,37 @@ public class MainActivity extends AppCompatActivity {
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 + getal2;
-                    String new_value = Integer.toString(uitkomst) + "x";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 + getal2;
+                    String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("-") ) {
 
                     String getallen[] = init_value.split("-");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 - getal2;
-                    String new_value = Integer.toString(uitkomst) + "x";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 - getal2;
+                    String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("x") ) {
 
                     String getallen[] = init_value.split("x");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 * getal2;
-                    String new_value = Integer.toString(uitkomst) + "x";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 * getal2;
+                    String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains(":") ) {
 
                     String getallen[] = init_value.split(":");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 / getal2;
-                    String new_value = Integer.toString(uitkomst) + "x";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 / getal2;
+                    String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
                 } else {
@@ -312,37 +312,37 @@ public class MainActivity extends AppCompatActivity {
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 + getal2;
-                    String new_value = Integer.toString(uitkomst) + ":";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 + getal2;
+                    String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("-") ) {
 
                     String getallen[] = init_value.split("-");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 - getal2;
-                    String new_value = Integer.toString(uitkomst) + ":";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 - getal2;
+                    String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("x") ) {
 
                     String getallen[] = init_value.split("x");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 * getal2;
-                    String new_value = Integer.toString(uitkomst) + ":";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 * getal2;
+                    String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains(":") ) {
 
                     String getallen[] = init_value.split(":");
-                    int getal1 =  Integer.parseInt( getallen[0] );
-                    int getal2 =  Integer.parseInt( getallen[1] );
-                    int uitkomst = getal1 / getal2;
-                    String new_value = Integer.toString(uitkomst) + ":";
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 / getal2;
+                    String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
                 } else {
@@ -351,5 +351,55 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // when the = button gets clicked
+        input_equals = (Button) findViewById(R.id.button_equals);
+        input_equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                if (init_value.contains("+") ) {
+
+                    String getallen[] = init_value.split("\\+");
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 + getal2;
+                    String new_value = Float.toString(uitkomst);
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains("-") ) {
+
+                    String getallen[] = init_value.split("-");
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 - getal2;
+                    String new_value = Float.toString(uitkomst);
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains("x") ) {
+
+                    String getallen[] = init_value.split("x");
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 * getal2;
+                    String new_value = Float.toString(uitkomst);
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains(":") ) {
+
+                    String getallen[] = init_value.split(":");
+                    float getal1 =  Float.parseFloat( getallen[0] );
+                    float getal2 =  Float.parseFloat( getallen[1] );
+                    float uitkomst = getal1 / getal2;
+                    String new_value = Float.toString(uitkomst);
+                    text_calculation.setText(new_value);
+
+                } else {
+                    final String new_value = init_value;
+                    text_calculation.setText(new_value);
+                }
+            }
+        });
+
     }
 }
