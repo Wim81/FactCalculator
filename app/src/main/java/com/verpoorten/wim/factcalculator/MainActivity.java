@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("FactCalculator");
 
-        Toast.makeText(MainActivity.this, "FactCalculator initaiting, oh Master...", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
 
         text_calculation = (EditText) findViewById(R.id.text_calculation);
 
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         input_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "0";
+                String init_value = text_calculation.getText().toString();
+                String new_value = init_value + "0";
                 text_calculation.setText(new_value);
             }
         });
@@ -62,8 +62,11 @@ public class MainActivity extends AppCompatActivity {
         input_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "1";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "1";
                 text_calculation.setText(new_value);
             }
         });
@@ -73,8 +76,11 @@ public class MainActivity extends AppCompatActivity {
         input_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "2";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "2";
                 text_calculation.setText(new_value);
             }
         });
@@ -84,8 +90,11 @@ public class MainActivity extends AppCompatActivity {
         input_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "3";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "3";
                 text_calculation.setText(new_value);
             }
         });
@@ -95,8 +104,11 @@ public class MainActivity extends AppCompatActivity {
         input_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "4";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "4";
                 text_calculation.setText(new_value);
             }
         });
@@ -106,8 +118,11 @@ public class MainActivity extends AppCompatActivity {
         input_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "5";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "5";
                 text_calculation.setText(new_value);
             }
         });
@@ -117,8 +132,11 @@ public class MainActivity extends AppCompatActivity {
         input_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "6";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "6";
                 text_calculation.setText(new_value);
             }
         });
@@ -128,8 +146,11 @@ public class MainActivity extends AppCompatActivity {
         input_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "7";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "7";
                 text_calculation.setText(new_value);
             }
         });
@@ -139,8 +160,11 @@ public class MainActivity extends AppCompatActivity {
         input_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "8";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "8";
                 text_calculation.setText(new_value);
             }
         });
@@ -150,8 +174,11 @@ public class MainActivity extends AppCompatActivity {
         input_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
-                final String new_value = init_value + "9";
+                String init_value = text_calculation.getText().toString();
+                if (init_value.equals("0")) {
+                    init_value = "";
+                }
+                String new_value = init_value + "9";
                 text_calculation.setText(new_value);
             }
         });
