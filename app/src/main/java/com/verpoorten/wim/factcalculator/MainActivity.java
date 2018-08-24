@@ -146,6 +146,53 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        input_add = (Button) findViewById(R.id.button_add);
+        input_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                if (init_value.contains("+") ) {
+
+                    String getallen[] = init_value.split("\\+");
+                    int getal1 =  Integer.parseInt( getallen[0] );
+                    int getal2 =  Integer.parseInt( getallen[1] );
+                    int uitkomst = getal1 + getal2;
+                    String new_value = Integer.toString(uitkomst) + "+";
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains("-") ) {
+
+                    String getallen[] = init_value.split("\\-");
+                    int getal1 =  Integer.parseInt( getallen[0] );
+                    int getal2 =  Integer.parseInt( getallen[1] );
+                    int uitkomst = getal1 - getal2;
+                    String new_value = Integer.toString(uitkomst) + "+";
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains("x") ) {
+
+                    String getallen[] = init_value.split("\\x");
+                    int getal1 =  Integer.parseInt( getallen[0] );
+                    int getal2 =  Integer.parseInt( getallen[1] );
+                    int uitkomst = getal1 * getal2;
+                    String new_value = Integer.toString(uitkomst) + "x";
+                    text_calculation.setText(new_value);
+
+                } else if ( init_value.contains(":") ) {
+
+                    String getallen[] = init_value.split("\\:");
+                    int getal1 =  Integer.parseInt( getallen[0] );
+                    int getal2 =  Integer.parseInt( getallen[1] );
+                    int uitkomst = getal1 / getal2;
+                    String new_value = Integer.toString(uitkomst) + ":";
+                    text_calculation.setText(new_value);
+
+                } else {
+                    final String new_value = init_value + "+";
+                    text_calculation.setText(new_value);
+                }
+            }
+        });
 
     }
 }
