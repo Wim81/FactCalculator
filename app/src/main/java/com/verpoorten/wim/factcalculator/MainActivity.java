@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button input_decimal;
     private Button input_positive_negative;
     private Button input_equals;
-    private Button input_back;
+    private Button input_clear;
     private EditText text_calculation;
     private EditText text_api;
     //endregion
@@ -448,6 +448,15 @@ public class MainActivity extends AppCompatActivity {
                     final String new_value = init_value;
                     text_calculation.setText(new_value);
                 }
+            }
+        });
+
+        // when the C button gets clicked
+        input_clear = (Button) findViewById(R.id.button_clear);
+        input_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text_calculation.setText("0");
             }
         });
 
