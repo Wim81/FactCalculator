@@ -156,6 +156,56 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // when the decimal button gets clicked
+        input_decimal = (Button) findViewById(R.id.button_decimal);
+        input_decimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String init_value = text_calculation.getText().toString();
+                String new_value = init_value;
+
+                if (init_value.contains("+") ) {
+                    String getallen[] = init_value.split("\\+");
+                    String getal2 =  ( getallen[1] );
+                    if (getal2.contains(".") ) {
+                        //nothing happens, because there already is a decimal point in the last number
+                    } else {
+                        new_value = init_value + ".";
+                    }
+                } else if (init_value.contains("-") ) {
+                    String getallen[] = init_value.split("-");
+                    String getal2 =  ( getallen[1] );
+                    if (getal2.contains(".") ) {
+                        //nothing happens, because there already is a decimal point in the last number
+                    } else {
+                        new_value = init_value + ".";
+                    }
+                } else if (init_value.contains("x") ) {
+                    String getallen[] = init_value.split("x");
+                    String getal2 =  ( getallen[1] );
+                    if (getal2.contains(".") ) {
+                        //nothing happens, because there already is a decimal point in the last number
+                    } else {
+                        new_value = init_value + ".";
+                    }
+                } else if (init_value.contains(":") ) {
+                    String getallen[] = init_value.split(":");
+                    String getal2 =  ( getallen[1] );
+                    if (getal2.contains(".") ) {
+                        //nothing happens, because there already is a decimal point in the last number
+                    } else {
+                        new_value = init_value + ".";
+                    }
+                } else if ( init_value.contains(".") ) {
+                    //nothing happens, because there already is a decimal point in the one number which is on display
+                } else {
+                    new_value = init_value + ".";
+                }
+
+                text_calculation.setText(new_value);
+            }
+        });
+
         // when the + button gets clicked
         input_add = (Button) findViewById(R.id.button_add);
         input_add.setOnClickListener(new View.OnClickListener() {
