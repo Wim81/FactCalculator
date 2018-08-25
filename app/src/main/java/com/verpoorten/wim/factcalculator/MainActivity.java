@@ -809,8 +809,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // let's get some API data!
-                new JsonTask().execute("http://numbersapi.com/36");
+                String result = text_calculation.getText().toString();
+                float result_converted = Float.parseFloat(result);
+                double result_converted_floored = Math.floor(result_converted);
+                int result_integer = (int) result_converted_floored;
+                String result_api = Integer.toString(result_integer);
+                String api_call = "http://numbersapi.com/" + result_api;
+
+                new JsonTask().execute(api_call);
             }
+            
         });
 
         // when the C button gets clicked
