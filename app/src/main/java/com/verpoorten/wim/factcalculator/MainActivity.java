@@ -188,10 +188,17 @@ public class MainActivity extends AppCompatActivity {
         input_decimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
+                String init_value = text_calculation.getText().toString();
                 String new_value = init_value;
 
-                if (init_value.contains("+") ) {
+                if (init_value.substring(init_value.length()-1).equals("+") ||
+                        init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") ||
+                        init_value.substring(init_value.length()-1).equals(":")) {
+
+                    new_value = init_value + "0.";
+
+                } else if (init_value.contains("+") ) {
                     String getallen[] = init_value.split("\\+");
                     String getal2 =  ( getallen[1] );
                     if (getal2.contains(".") ) {
@@ -347,9 +354,13 @@ public class MainActivity extends AppCompatActivity {
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 / getal2;
-                    String new_value = Float.toString(uitkomst) + "+";
-                    text_calculation.setText(new_value);
+                    if (getal2 == 0) {
+                        Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        float uitkomst = getal1 / getal2;
+                        String new_value = Float.toString(uitkomst);
+                        text_calculation.setText(new_value);
+                    }
 
                 } else {
                     final String new_value = init_value + "+";
@@ -396,9 +407,13 @@ public class MainActivity extends AppCompatActivity {
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 / getal2;
-                    String new_value = Float.toString(uitkomst) + "-";
-                    text_calculation.setText(new_value);
+                    if (getal2 == 0) {
+                        Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        float uitkomst = getal1 / getal2;
+                        String new_value = Float.toString(uitkomst);
+                        text_calculation.setText(new_value);
+                    }
 
                 } else {
                     final String new_value = init_value + "-";
@@ -445,10 +460,13 @@ public class MainActivity extends AppCompatActivity {
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 / getal2;
-                    String new_value = Float.toString(uitkomst) + "x";
-                    text_calculation.setText(new_value);
-
+                    if (getal2 == 0) {
+                        Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        float uitkomst = getal1 / getal2;
+                        String new_value = Float.toString(uitkomst);
+                        text_calculation.setText(new_value);
+                    }
                 } else {
                     final String new_value = init_value + "x";
                     text_calculation.setText(new_value);
@@ -494,9 +512,13 @@ public class MainActivity extends AppCompatActivity {
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 / getal2;
-                    String new_value = Float.toString(uitkomst) + ":";
-                    text_calculation.setText(new_value);
+                    if (getal2 == 0) {
+                        Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        float uitkomst = getal1 / getal2;
+                        String new_value = Float.toString(uitkomst);
+                        text_calculation.setText(new_value);
+                    }
 
                 } else {
                     final String new_value = init_value + ":";
@@ -543,10 +565,13 @@ public class MainActivity extends AppCompatActivity {
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 / getal2;
-                    String new_value = Float.toString(uitkomst);
-                    text_calculation.setText(new_value);
-
+                    if (getal2 == 0) {
+                        Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        float uitkomst = getal1 / getal2;
+                        String new_value = Float.toString(uitkomst);
+                        text_calculation.setText(new_value);
+                    }
                 } else {
                     final String new_value = init_value;
                     text_calculation.setText(new_value);
