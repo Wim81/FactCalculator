@@ -77,7 +77,8 @@
                 android:layout_weight="2"
                 android:text="@string/button_c"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="461dp" />
+                tools:layout_editor_absoluteY="461dp"
+                android:background="@drawable/calculator_button"  />
 
             <Button
                 android:id="@+id/button_add"
@@ -86,7 +87,8 @@
                 android:layout_weight="1"
                 android:text="@string/button_add"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="461dp" />
+                tools:layout_editor_absoluteY="461dp"
+                android:background="@drawable/calculator_button"  />
 
             <Button
                 android:id="@+id/button_subtract"
@@ -95,7 +97,8 @@
                 android:layout_weight="1"
                 android:text="@string/button_subtract"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="461dp" />
+                tools:layout_editor_absoluteY="461dp"
+                android:background="@drawable/calculator_button"  />
 
         </TableRow>
 
