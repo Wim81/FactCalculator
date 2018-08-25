@@ -346,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
         input_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
+                String init_value = text_calculation.getText().toString();
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
@@ -356,14 +356,49 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
+                } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-", 2);
-                    float getal1 =  Float.parseFloat( getallen[0] );
-                    float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 - getal2;
-                    String new_value = Float.toString(uitkomst) + "+";
-                    text_calculation.setText(new_value);
+                    if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is slechts 1 min teken en dat staat vooraan
+                        String new_value =  init_value + "+";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens en 1 staat vooraan
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-");
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "+";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
+                        // er zijn 3 min tekens
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "+";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens maar geen staat vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "+";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is 1 min teken maar niet vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "+";
+                        text_calculation.setText(new_value);
+                    } else {
+                        // no other options
+                    }
 
                 } else if ( init_value.contains("x") ) {
 
@@ -399,7 +434,7 @@ public class MainActivity extends AppCompatActivity {
         input_subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
+                String init_value = text_calculation.getText().toString();
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
@@ -409,14 +444,49 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
+                } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-", 2);
-                    float getal1 =  Float.parseFloat( getallen[0] );
-                    float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 - getal2;
-                    String new_value = Float.toString(uitkomst) + "-";
-                    text_calculation.setText(new_value);
+                    if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is slechts 1 min teken en dat staat vooraan
+                        String new_value =  init_value + "-";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens en 1 staat vooraan
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-");
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "-";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
+                        // er zijn 3 min tekens
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "-";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens maar geen staat vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "-";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is 1 min teken maar niet vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "-";
+                        text_calculation.setText(new_value);
+                    } else {
+                        // no other options
+                    }
 
                 } else if ( init_value.contains("x") ) {
 
@@ -452,7 +522,7 @@ public class MainActivity extends AppCompatActivity {
         input_multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
+                String init_value = text_calculation.getText().toString();
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
@@ -462,14 +532,49 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
+                } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-", 2);
-                    float getal1 =  Float.parseFloat( getallen[0] );
-                    float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 - getal2;
-                    String new_value = Float.toString(uitkomst) + "x";
-                    text_calculation.setText(new_value);
+                    if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is slechts 1 min teken en dat staat vooraan
+                        String new_value =  init_value + "x";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens en 1 staat vooraan
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-");
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "x";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
+                        // er zijn 3 min tekens
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "x";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens maar geen staat vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "x";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is 1 min teken maar niet vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + "x";
+                        text_calculation.setText(new_value);
+                    } else {
+                        // no other options
+                    }
 
                 } else if ( init_value.contains("x") ) {
 
@@ -504,7 +609,7 @@ public class MainActivity extends AppCompatActivity {
         input_divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String init_value = text_calculation.getText().toString();
+                String init_value = text_calculation.getText().toString();
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
@@ -514,14 +619,49 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
+                } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-", 2);
-                    float getal1 =  Float.parseFloat( getallen[0] );
-                    float getal2 =  Float.parseFloat( getallen[1] );
-                    float uitkomst = getal1 - getal2;
-                    String new_value = Float.toString(uitkomst) + ":";
-                    text_calculation.setText(new_value);
+                    if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is slechts 1 min teken en dat staat vooraan
+                        String new_value =  init_value + ":";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens en 1 staat vooraan
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-");
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + ":";
+                        text_calculation.setText(new_value);
+                    } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
+                        // er zijn 3 min tekens
+                        init_value = init_value.substring(1);
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  0 - Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + ":";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
+                        // er zijn 2 min tekens maar geen staat vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + ":";
+                        text_calculation.setText(new_value);
+                    } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
+                        // er is 1 min teken maar niet vooraan
+                        String getallen[] = init_value.split("-", 2);
+                        float getal1 =  Float.parseFloat( getallen[0] );
+                        float getal2 =  Float.parseFloat( getallen[1] );
+                        float uitkomst = getal1 - getal2;
+                        String new_value =  Float.toString(uitkomst) + ":";
+                        text_calculation.setText(new_value);
+                    } else {
+                        // no other options
+                    }
 
                 } else if ( init_value.contains("x") ) {
 
