@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="1"
+        android:background="@drawable/overall_bg_calculator"
         app:layout_constraintHeight_default="spread"
         app:layout_constraintHeight_max="wrap"
         app:layout_constraintHeight_min="wrap"
