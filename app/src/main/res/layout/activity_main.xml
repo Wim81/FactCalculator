@@ -39,7 +39,7 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:inputType="text"
-                android:text="0"
+                android:text="@string/text_calculation"
                 android:textSize="30sp" />
 
         </TableRow>
@@ -60,7 +60,7 @@
                 android:focusable="false"
                 android:focusableInTouchMode="false"
                 android:inputType="text"
-                android:text="API text here" />
+                android:text="@string/text_api" />
 
         </TableRow>
 
@@ -75,7 +75,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="C"
+                android:text="@string/button_c"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -84,7 +84,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="+"
+                android:text="@string/button_add"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -93,7 +93,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="-"
+                android:text="@string/button_subtract"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -110,7 +110,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="7"
+                android:text="@string/button_7"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -119,7 +119,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="8"
+                android:text="@string/button_8"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -128,7 +128,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="9"
+                android:text="@string/button_9"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -137,7 +137,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="x"
+                android:text="@string/button_multiply"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -154,7 +154,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="4"
+                android:text="@string/button_4"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -163,7 +163,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="5"
+                android:text="@string/button_5"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -172,7 +172,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="6"
+                android:text="@string/button_6"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -181,7 +181,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text=":"
+                android:text="@string/button_divide"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
@@ -209,7 +209,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="1"
+                        android:text="@string/button_1"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
 
@@ -218,7 +218,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="2"
+                        android:text="@string/button_2"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
 
@@ -227,7 +227,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="3"
+                        android:text="@string/button_3"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
                 </TableRow>
@@ -243,7 +243,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="0"
+                        android:text="@string/button_zero"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
 
@@ -252,7 +252,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="."
+                        android:text="@string/button_decimal"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
 
@@ -261,7 +261,7 @@
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="+/-"
+                        android:text="@string/button_positive_negative"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="461dp" />
 
@@ -274,7 +274,7 @@
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="="
+                android:text="@string/button_equals"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="461dp" />
 
