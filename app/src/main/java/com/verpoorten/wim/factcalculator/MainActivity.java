@@ -347,7 +347,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
-                if (init_value.contains("+") ) {
+                if (init_value.substring(init_value.length()-1).equals("+") || init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") || init_value.substring(init_value.length()-1).equals(":")) {
+                    Toast.makeText(MainActivity.this, "That would not make sense, now would it?", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -435,7 +439,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
-                if (init_value.contains("+") ) {
+                if (init_value.substring(init_value.length()-1).equals("+") || init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") || init_value.substring(init_value.length()-1).equals(":")) {
+                    Toast.makeText(MainActivity.this, "That would not make sense, now would it?", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -523,7 +531,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
-                if (init_value.contains("+") ) {
+                if (init_value.substring(init_value.length()-1).equals("+") || init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") || init_value.substring(init_value.length()-1).equals(":")) {
+                    Toast.makeText(MainActivity.this, "That would not make sense, now would it?", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -610,7 +622,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
-                if (init_value.contains("+") ) {
+                if (init_value.substring(init_value.length()-1).equals("+") || init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") || init_value.substring(init_value.length()-1).equals(":")) {
+                    Toast.makeText(MainActivity.this, "That would not make sense, now would it?", Toast.LENGTH_SHORT).show();
+                    return;
+                } else if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -698,6 +714,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
+                if (init_value.substring(init_value.length()-1).equals("+") || init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") || init_value.substring(init_value.length()-1).equals(":")) {
+                    Toast.makeText(MainActivity.this, "That would not make sense, now would it?", Toast.LENGTH_SHORT).show();
+                    return;
+                } else
                 if (init_value.contains("+") ) {
 
                     String getallen[] = init_value.split("\\+");
