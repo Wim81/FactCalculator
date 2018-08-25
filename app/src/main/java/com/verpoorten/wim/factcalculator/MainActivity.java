@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                         init_value.substring(init_value.length()-1).equals("-") ||
                         init_value.substring(init_value.length()-1).equals("x") ||
                         init_value.substring(init_value.length()-1).equals(":")) {
-
+                    // if decimal is entered right after an operator, we add a leading zero in order to keep the app from crashing
                     new_value = init_value + "0.";
 
                 } else if (init_value.contains("+") ) {
@@ -333,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-");
+                    String getallen[] = init_value.split("-", 2);
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 - getal2;
@@ -386,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-");
+                    String getallen[] = init_value.split("-", 2);
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 - getal2;
@@ -439,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-");
+                    String getallen[] = init_value.split("-", 2);
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 - getal2;
@@ -491,7 +491,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-");
+                    String getallen[] = init_value.split("-", 2);
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 - getal2;
@@ -544,7 +544,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
-                    String getallen[] = init_value.split("-");
+                    String getallen[] = init_value.split("-", 2);
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 - getal2;
