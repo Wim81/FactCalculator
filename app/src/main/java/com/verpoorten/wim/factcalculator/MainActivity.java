@@ -807,6 +807,9 @@ public class MainActivity extends AppCompatActivity {
                     final String new_value = init_value;
                     text_calculation.setText(new_value);
                 }
+
+                // let's get some API data!
+                new JsonTask().execute("http://numbersapi.com/36");
             }
         });
 
@@ -887,6 +890,7 @@ public class MainActivity extends AppCompatActivity {
             if (pd.isShowing()){
                 pd.dismiss();
             }
+            text_api = (EditText) findViewById(R.id.text_api);
             text_api.setText(result);
         }
     }
