@@ -818,7 +818,7 @@ public class MainActivity extends AppCompatActivity {
 
                 new JsonTask().execute(api_call);
             }
-            
+
         });
 
         // when the C button gets clicked
@@ -827,6 +827,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 text_calculation.setText("0");
+                text_api.setText("");
             }
         });
 
