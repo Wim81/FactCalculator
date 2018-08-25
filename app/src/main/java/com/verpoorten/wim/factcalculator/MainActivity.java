@@ -233,6 +233,82 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // when the positive/negative button gets clicked
+        input_positive_negative = (Button) findViewById(R.id.button_positive_negative);
+        input_positive_negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String init_value = text_calculation.getText().toString();
+
+                if(init_value.substring(init_value.length()-1).equals("+") ||
+                        init_value.substring(init_value.length()-1).equals("-") ||
+                        init_value.substring(init_value.length()-1).equals("x") ||
+                        init_value.substring(init_value.length()-1).equals(":")) {
+                    // nothing happens if +/- button gets clicked but the last character is an operator
+                } else if ( init_value.contains("+") && !init_value.substring(init_value.length()-1).equals("+") ) {
+
+                    String getallen[] = init_value.split("\\+");
+                    if (getallen[1].substring(0,1).equals("-")) {
+                        getallen[1] = getallen[1].substring(1);
+                        String new_value = getallen[0] + "+" + getallen[1];
+                        text_calculation.setText(new_value);
+                    } else {
+                        getallen[1] = "-" + getallen[1];
+                        String new_value = getallen[0] + "+" + getallen[1];
+                        text_calculation.setText(new_value);
+                    }
+
+                } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
+
+                    String getallen[] = init_value.split("-");
+                    if (getallen[1].substring(0,1).equals("-")) {
+                        getallen[1] = getallen[1].substring(1);
+                        String new_value = getallen[0] + "-" + getallen[1];
+                        text_calculation.setText(new_value);
+                    } else {
+                        getallen[1] = "-" + getallen[1];
+                        String new_value = getallen[0] + "-" + getallen[1];
+                        text_calculation.setText(new_value);
+                    }
+
+                } else if ( init_value.contains("x") && !init_value.substring(init_value.length()-1).equals("x") ) {
+
+                    String getallen[] = init_value.split("x");
+                    if (getallen[1].substring(0,1).equals("-")) {
+                        getallen[1] = getallen[1].substring(1);
+                        String new_value = getallen[0] + "x" + getallen[1];
+                        text_calculation.setText(new_value);
+                    } else {
+                        getallen[1] = "-" + getallen[1];
+                        String new_value = getallen[0] + "x" + getallen[1];
+                        text_calculation.setText(new_value);
+                    }
+
+                } else if ( init_value.contains(":") && !init_value.substring(init_value.length()-1).equals(":") ) {
+
+                    String getallen[] = init_value.split(":");
+                    if (getallen[1].substring(0,1).equals("-")) {
+                        getallen[1] = getallen[1].substring(1);
+                        String new_value = getallen[0] + ":" + getallen[1];
+                        text_calculation.setText(new_value);
+                    } else {
+                        getallen[1] = "-" + getallen[1];
+                        String new_value = getallen[0] + ":" + getallen[1];
+                        text_calculation.setText(new_value);
+                    }
+
+                } else {
+                    if (init_value.substring(0,1).equals("-")) {
+                        String new_value = init_value.substring(1);
+                        text_calculation.setText(new_value);
+                    } else {
+                        String new_value = "-" + init_value;
+                        text_calculation.setText(new_value);
+                    }
+                }
+            }
+        });
+
         // when the + button gets clicked
         input_add = (Button) findViewById(R.id.button_add);
         input_add.setOnClickListener(new View.OnClickListener() {
