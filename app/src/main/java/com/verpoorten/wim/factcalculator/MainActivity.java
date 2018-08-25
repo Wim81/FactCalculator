@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "+";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 ) {
+                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
                     String getallen[] = init_value.split("-");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -373,7 +373,7 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "-";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 ) {
+                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
                     String getallen[] = init_value.split("-");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -422,7 +422,7 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + "x";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 ) {
+                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
                     String getallen[] = init_value.split("-");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -471,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst) + ":";
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 ) {
+                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0  && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
                     String getallen[] = init_value.split("-");
                     float getal1 =  Float.parseFloat( getallen[0] );
@@ -520,7 +520,7 @@ public class MainActivity extends AppCompatActivity {
                     String new_value = Float.toString(uitkomst);
                     text_calculation.setText(new_value);
 
-                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 ) {
+                } else if ( init_value.contains("-") && init_value.indexOf("-") != 0 && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
                     String getallen[] = init_value.split("-");
                     float getal1 =  Float.parseFloat( getallen[0] );
