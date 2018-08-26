@@ -1,16 +1,14 @@
 package com.verpoorten.wim.factcalculator;
 
 import android.app.ProgressDialog;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -54,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("FactCalculator");
 
+        input_0 = (Button) findViewById(R.id.button_0);
+        //font
+        Typeface calcFont = Typeface.createFromAsset(getAssets(), "fonts/Baby-Universe.ttf");
+
+        input_0.setTypeface(calcFont);
+
         Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
 
         text_calculation = (EditText) findViewById(R.id.text_calculation);
@@ -61,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         // when the 0 button gets clicked
-        input_0 = (Button) findViewById(R.id.button_0);
         input_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
