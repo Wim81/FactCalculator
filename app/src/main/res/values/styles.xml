@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CalculatorButton" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">@color/colorButtonLabel</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
 </resources>
