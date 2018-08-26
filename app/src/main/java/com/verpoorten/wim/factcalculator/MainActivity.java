@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             text_calculation.setTextSize(30);
         } else if (new_value.length() > 7) {
             text_calculation.setTextSize(50);
+        } else {
+            text_calculation.setTextSize(100);
         }
     }
 
@@ -124,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String init_value = text_calculation.getText().toString();
                 String new_value = init_value + "0";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -139,7 +141,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String new_value = init_value + "1";
                 updateTextCalculation(new_value);
-                // text_calculation.setText(new_value);
                 text_api.setText("");
             }
         });
@@ -153,14 +154,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "2";
-                text_calculation.setText(new_value);
-                if(new_value.length() > 24) {
-                    text_calculation.setTextSize(20);
-                } else if(new_value.length() > 15) {
-                    text_calculation.setTextSize(30);
-                } else if (new_value.length() > 7) {
-                    text_calculation.setTextSize(50);
-                }
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -174,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "3";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -188,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "4";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -202,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "5";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -216,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "6";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -230,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "7";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -244,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "8";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -258,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "9";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -315,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
                     new_value = init_value + ".";
                 }
 
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
                 text_api.setText("");
             }
         });
@@ -337,11 +331,11 @@ public class MainActivity extends AppCompatActivity {
                     if (getallen[1].substring(0,1).equals("-")) {
                         getallen[1] = getallen[1].substring(1);
                         String new_value = getallen[0] + "+" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                         getallen[1] = "-" + getallen[1];
                         String new_value = getallen[0] + "+" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     }
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
@@ -349,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is slechts 1 min teken en dat staat vooraan
                         String new_value = init_value.substring(1);
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
                         init_value = init_value.substring(1);
@@ -357,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
                         getallen[0] = "-" + getallen[0];
                         getallen[1] = "-" + getallen[1];
                         String new_value = getallen[0] + "-" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens en
                         init_value = init_value.substring(1);
@@ -365,19 +359,19 @@ public class MainActivity extends AppCompatActivity {
                         getallen[0] = "-" + getallen[0];
                         getallen[1] = getallen[1].substring(1);
                         String new_value = getallen[0] + "-" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
                         String getallen[] = init_value.split("-", 2);
                         getallen[1] = getallen[1].substring(1);
                         String new_value = getallen[0] + "-" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
                         String getallen[] = init_value.split("-");
                         getallen[1] = "-" + getallen[1];
                         String new_value = getallen[0] + "-" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                        // no other options
                     }
@@ -388,11 +382,11 @@ public class MainActivity extends AppCompatActivity {
                     if (getallen[1].substring(0,1).equals("-")) {
                         getallen[1] = getallen[1].substring(1);
                         String new_value = getallen[0] + "x" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                         getallen[1] = "-" + getallen[1];
                         String new_value = getallen[0] + "x" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     }
 
                 } else if ( init_value.contains(":") && !init_value.substring(init_value.length()-1).equals(":") ) {
@@ -401,20 +395,20 @@ public class MainActivity extends AppCompatActivity {
                     if (getallen[1].substring(0,1).equals("-")) {
                         getallen[1] = getallen[1].substring(1);
                         String new_value = getallen[0] + ":" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                         getallen[1] = "-" + getallen[1];
                         String new_value = getallen[0] + ":" + getallen[1];
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     }
 
                 } else {
                     if (init_value.substring(0,1).equals("-")) {
                         String new_value = init_value.substring(1);
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                         String new_value = "-" + init_value;
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     }
                 }
                 text_api.setText("");
@@ -441,7 +435,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "+";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -456,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is slechts 1 min teken en dat staat vooraan
                         String new_value =  init_value + "+";
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
                         init_value = init_value.substring(1);
@@ -469,7 +463,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -491,7 +485,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -512,7 +506,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -533,7 +527,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -558,7 +552,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "+";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -582,7 +576,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -598,7 +592,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0+") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "+";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
                     text_api.setText("");
                 }
             }
@@ -624,7 +618,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "-";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -643,7 +637,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
                         init_value = init_value.substring(1);
@@ -656,7 +650,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -678,7 +672,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -699,7 +693,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -720,7 +714,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -745,7 +739,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "-";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -769,7 +763,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -786,7 +780,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0-") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "-";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
                     text_api.setText("");
                 }
             }
@@ -812,7 +806,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "x";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -831,7 +825,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
                         init_value = init_value.substring(1);
@@ -844,7 +838,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -866,7 +860,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -887,7 +881,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -908,7 +902,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -933,7 +927,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "x";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -957,7 +951,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -974,7 +968,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0x") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + "x";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
                     text_api.setText("");
                 }
             }
@@ -1000,7 +994,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + ":";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -1019,7 +1013,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
                         init_value = init_value.substring(1);
@@ -1032,7 +1026,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -1054,7 +1048,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -1075,7 +1069,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -1096,7 +1090,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -1121,7 +1115,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + ":";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                     // let's get some API data!
                     double result_converted_floored = Math.floor(uitkomst);
@@ -1145,7 +1139,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
 
                         // let's get some API data!
                         double result_converted_floored = Math.floor(uitkomst);
@@ -1162,7 +1156,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0:") ) {
                         new_value = new_value.substring(0, new_value.length()-3) + ":";
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
                     text_api.setText("");
                 }
             }
@@ -1189,7 +1183,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                         new_value = new_value.substring(0, new_value.length()-2);
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
@@ -1207,7 +1201,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                             new_value = new_value.substring(0, new_value.length()-2);
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
                         init_value = init_value.substring(1);
@@ -1220,7 +1214,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                             new_value = new_value.substring(0, new_value.length()-2);
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
                         String getallen[] = init_value.split("-", 2);
@@ -1232,7 +1226,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                             new_value = new_value.substring(0, new_value.length()-2);
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
                         String getallen[] = init_value.split("-", 2);
@@ -1244,7 +1238,7 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                             new_value = new_value.substring(0, new_value.length()-2);
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     } else {
                         // no other options
                     }
@@ -1260,7 +1254,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                         new_value = new_value.substring(0, new_value.length()-2);
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
 
                 } else if ( init_value.contains(":") ) {
 
@@ -1276,15 +1270,15 @@ public class MainActivity extends AppCompatActivity {
                         if ( new_value.substring(new_value.length()-2).equals(".0") ) {
                             new_value = new_value.substring(0, new_value.length()-2);
                         }
-                        text_calculation.setText(new_value);
+                        updateTextCalculation(new_value);
                     }
                 } else {
                     String new_value = init_value;
                     // getting rid of decimal where not needed
-                    if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                    if ( new_value.length() >= 3 && new_value.substring(new_value.length()-2).equals(".0") ) {
                         new_value = new_value.substring(0, new_value.length()-2);
                     }
-                    text_calculation.setText(new_value);
+                    updateTextCalculation(new_value);
                 }
 
                 // let's get some API data!
@@ -1304,7 +1298,7 @@ public class MainActivity extends AppCompatActivity {
         input_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text_calculation.setText("0");
+                updateTextCalculation("0");
                 text_api.setText("");
             }
         });
