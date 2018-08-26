@@ -1313,7 +1313,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPreExecute();
 
             pd = new ProgressDialog(MainActivity.this);
-            pd.setMessage("Please wait");
+            pd.setMessage("Hold on while we fetch some useless fact for you!");
             pd.setCancelable(false);
             pd.show();
         }
@@ -1371,6 +1371,8 @@ public class MainActivity extends AppCompatActivity {
             if (pd.isShowing()){
                 pd.dismiss();
             }
+            // tiny correction because API result always includes a nasty enter at the end which is not needed
+            result = result.substring(0, result.length()-1);
             text_api.setText(result);
         }
     }
