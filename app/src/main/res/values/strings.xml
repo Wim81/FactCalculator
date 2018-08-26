@@ -19,5 +19,5 @@
     <string name="button_equals">=</string>
     <string name="button_c">C</string>
     <string name="text_calculation">0</string>
-    <string name="text_api">API text here</string>
+    <string name="text_api">Welcome to the FactCalculator! Use the calculator &amp; let me shower you with facts about your solutions! Oh yeah!</string>
 </resources>
