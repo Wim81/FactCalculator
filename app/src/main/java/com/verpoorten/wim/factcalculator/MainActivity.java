@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
         //font
         Typeface calcFont = Typeface.createFromAsset(getAssets(), "fonts/Baby-Universe.ttf");
+        Typeface calcFontAPI = Typeface.createFromAsset(getAssets(), "fonts/berlin_sans.TTF");
+        Typeface calcFontScreen = Typeface.createFromAsset(getAssets(), "fonts/digital_7_mono.ttf");
+
         input_0.setTypeface(calcFont);
         input_1.setTypeface(calcFont);
         input_2.setTypeface(calcFont);
@@ -94,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
         input_divide.setTypeface(calcFont);
         input_equals.setTypeface(calcFont);
         input_clear.setTypeface(calcFont);
-        text_calculation.setTypeface(calcFont);
-
+        text_calculation.setTypeface(calcFontScreen);
+        text_api.setTypeface(calcFontAPI);
 
 
         Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
@@ -411,6 +414,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 + getal2;
                     String new_value = Float.toString(uitkomst) + "+";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "+";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -435,6 +442,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "+";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "+";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -453,6 +464,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "+";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "+";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -470,6 +485,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "+";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "+";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -487,6 +506,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "+";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "+";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -508,6 +531,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 * getal2;
                     String new_value = Float.toString(uitkomst) + "+";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "+";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -528,6 +555,10 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst) + "+";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0+") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "+";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -540,7 +571,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    final String new_value = init_value + "+";
+                    String new_value = init_value + "+";
+                    if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0+") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "+";
+                    }
                     text_calculation.setText(new_value);
                     text_api.setText("");
                 }
@@ -563,6 +597,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 + getal2;
                     String new_value = Float.toString(uitkomst) + "-";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "-";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -578,6 +616,10 @@ public class MainActivity extends AppCompatActivity {
                     if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is slechts 1 min teken en dat staat vooraan
                         String new_value =  init_value + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
@@ -587,6 +629,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -605,6 +651,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -622,6 +672,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -639,6 +693,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -660,6 +718,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 * getal2;
                     String new_value = Float.toString(uitkomst) + "-";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "-";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -680,6 +742,10 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst) + "-";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0-") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "-";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -692,7 +758,11 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    final String new_value = init_value + "-";
+                    String new_value = init_value + "-";
+                    // getting rid of decimal where not needed
+                    if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0-") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "-";
+                    }
                     text_calculation.setText(new_value);
                     text_api.setText("");
                 }
@@ -715,6 +785,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 + getal2;
                     String new_value = Float.toString(uitkomst) + "x";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "x";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -730,6 +804,10 @@ public class MainActivity extends AppCompatActivity {
                     if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is slechts 1 min teken en dat staat vooraan
                         String new_value =  init_value + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
@@ -739,6 +817,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -757,6 +839,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -774,6 +860,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -791,6 +881,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -812,6 +906,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 * getal2;
                     String new_value = Float.toString(uitkomst) + "x";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "x";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -832,6 +930,10 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst) + "x";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0x") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + "x";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -844,7 +946,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 } else {
-                    final String new_value = init_value + "x";
+                    String new_value = init_value + "x";
+                    // getting rid of decimal where not needed
+                    if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0x") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + "x";
+                    }
                     text_calculation.setText(new_value);
                     text_api.setText("");
                 }
@@ -867,6 +973,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 + getal2;
                     String new_value = Float.toString(uitkomst) + ":";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + ":";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -882,6 +992,10 @@ public class MainActivity extends AppCompatActivity {
                     if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is slechts 1 min teken en dat staat vooraan
                         String new_value =  init_value + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens en 1 staat vooraan
@@ -891,6 +1005,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -909,6 +1027,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -926,6 +1048,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -943,6 +1069,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst) + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -964,6 +1094,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 * getal2;
                     String new_value = Float.toString(uitkomst) + ":";
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + ":";
+                    }
                     text_calculation.setText(new_value);
 
                     // let's get some API data!
@@ -984,6 +1118,10 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst) + ":";
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-3).equals(".0:") ) {
+                            new_value = new_value.substring(0, new_value.length()-3) + ":";
+                        }
                         text_calculation.setText(new_value);
 
                         // let's get some API data!
@@ -996,7 +1134,11 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    final String new_value = init_value + ":";
+                    String new_value = init_value + ":";
+                    // getting rid of decimal where not needed
+                    if ( new_value.length() >= 3 && new_value.substring(new_value.length()-3).equals(".0:") ) {
+                        new_value = new_value.substring(0, new_value.length()-3) + ":";
+                    }
                     text_calculation.setText(new_value);
                     text_api.setText("");
                 }
@@ -1020,6 +1162,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 + getal2;
                     String new_value = Float.toString(uitkomst);
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                        new_value = new_value.substring(0, new_value.length()-2);
+                    }
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
@@ -1034,6 +1180,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst);
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                            new_value = new_value.substring(0, new_value.length()-2);
+                        }
                         text_calculation.setText(new_value);
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
@@ -1043,6 +1193,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst);
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                            new_value = new_value.substring(0, new_value.length()-2);
+                        }
                         text_calculation.setText(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
@@ -1051,6 +1205,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst);
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                            new_value = new_value.substring(0, new_value.length()-2);
+                        }
                         text_calculation.setText(new_value);
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
@@ -1059,6 +1217,10 @@ public class MainActivity extends AppCompatActivity {
                         float getal2 =  Float.parseFloat( getallen[1] );
                         float uitkomst = getal1 - getal2;
                         String new_value =  Float.toString(uitkomst);
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                            new_value = new_value.substring(0, new_value.length()-2);
+                        }
                         text_calculation.setText(new_value);
                     } else {
                         // no other options
@@ -1071,6 +1233,10 @@ public class MainActivity extends AppCompatActivity {
                     float getal2 =  Float.parseFloat( getallen[1] );
                     float uitkomst = getal1 * getal2;
                     String new_value = Float.toString(uitkomst);
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                        new_value = new_value.substring(0, new_value.length()-2);
+                    }
                     text_calculation.setText(new_value);
 
                 } else if ( init_value.contains(":") ) {
@@ -1083,10 +1249,18 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst);
+                        // getting rid of decimal where not needed
+                        if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                            new_value = new_value.substring(0, new_value.length()-2);
+                        }
                         text_calculation.setText(new_value);
                     }
                 } else {
-                    final String new_value = init_value;
+                    String new_value = init_value;
+                    // getting rid of decimal where not needed
+                    if ( new_value.substring(new_value.length()-2).equals(".0") ) {
+                        new_value = new_value.substring(0, new_value.length()-2);
+                    }
                     text_calculation.setText(new_value);
                 }
 
