@@ -29,7 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height = "0dp"
             android:layout_weight = "5"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark">
 
 
             <EditText
@@ -47,7 +48,8 @@
                 android:textSize="100sp"
                 android:textColor="@color/colorButtonLabel"
                 android:background="@android:color/transparent"
-                android:padding="10dp" />
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
 
         </TableRow>
 
@@ -55,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimary">
 
             <EditText
                 android:id="@+id/text_api"
@@ -85,7 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height = "0dp"
             android:layout_weight = "1"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark">
 
             <Button
                 style="@style/CalculatorButton"
@@ -126,7 +130,8 @@
             android:layout_width="match_parent"
             android:layout_height = "0dp"
             android:layout_weight = "1"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimary">
 
             <Button
                 style="@style/CalculatorButton"
@@ -178,7 +183,8 @@
             android:layout_width="match_parent"
             android:layout_height = "0dp"
             android:layout_weight = "1"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark">
 
             <Button
                 style="@style/CalculatorButton"
@@ -230,7 +236,8 @@
             android:layout_width="match_parent"
             android:layout_height = "0dp"
             android:layout_weight = "2"
-            android:gravity="center">
+            android:gravity="center"
+            android:background="@color/colorPrimary">
 
             <TableLayout
                 android:layout_width="0dip"
