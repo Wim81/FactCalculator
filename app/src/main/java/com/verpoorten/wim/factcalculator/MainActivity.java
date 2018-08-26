@@ -45,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog pd;
     //endregion
 
+    //function for updateing text_calculation
+    public void updateTextCalculation(String new_value) {
+        text_calculation.setText(new_value);
+        if(new_value.length() > 24) {
+            text_calculation.setTextSize(20);
+        } else if(new_value.length() > 15) {
+            text_calculation.setTextSize(30);
+        } else if (new_value.length() > 7) {
+            text_calculation.setTextSize(50);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,8 +112,11 @@ public class MainActivity extends AppCompatActivity {
         text_calculation.setTypeface(calcFontScreen);
         text_api.setTypeface(calcFontAPI);
 
-
+        //init message
         Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
+
+
+
 
         // when the 0 button gets clicked
         input_0.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +138,8 @@ public class MainActivity extends AppCompatActivity {
                     init_value = "";
                 }
                 String new_value = init_value + "1";
-                text_calculation.setText(new_value);
+                updateTextCalculation(new_value);
+                // text_calculation.setText(new_value);
                 text_api.setText("");
             }
         });
@@ -138,6 +154,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 String new_value = init_value + "2";
                 text_calculation.setText(new_value);
+                if(new_value.length() > 24) {
+                    text_calculation.setTextSize(20);
+                } else if(new_value.length() > 15) {
+                    text_calculation.setTextSize(30);
+                } else if (new_value.length() > 7) {
+                    text_calculation.setTextSize(50);
+                }
                 text_api.setText("");
             }
         });
