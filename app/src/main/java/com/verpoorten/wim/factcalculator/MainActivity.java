@@ -52,17 +52,53 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("FactCalculator");
 
+        // initialize buttons & text fields
         input_0 = (Button) findViewById(R.id.button_0);
-        //font
-        Typeface calcFont = Typeface.createFromAsset(getAssets(), "fonts/Baby-Universe.ttf");
-
-        input_0.setTypeface(calcFont);
-
-        Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
-
+        input_1 = (Button) findViewById(R.id.button_1);
+        input_2 = (Button) findViewById(R.id.button_2);
+        input_3 = (Button) findViewById(R.id.button_3);
+        input_4 = (Button) findViewById(R.id.button_4);
+        input_5 = (Button) findViewById(R.id.button_5);
+        input_6 = (Button) findViewById(R.id.button_6);
+        input_7 = (Button) findViewById(R.id.button_7);
+        input_8 = (Button) findViewById(R.id.button_8);
+        input_9 = (Button) findViewById(R.id.button_9);
+        input_decimal = (Button) findViewById(R.id.button_decimal);
+        input_positive_negative = (Button) findViewById(R.id.button_positive_negative);
+        input_add = (Button) findViewById(R.id.button_add);
+        input_subtract = (Button) findViewById(R.id.button_subtract);
+        input_multiply = (Button) findViewById(R.id.button_multiply);
+        input_divide = (Button) findViewById(R.id.button_divide);
+        input_equals = (Button) findViewById(R.id.button_equals);
+        input_clear = (Button) findViewById(R.id.button_clear);
         text_calculation = (EditText) findViewById(R.id.text_calculation);
         text_api = (EditText) findViewById(R.id.text_api);
 
+        //font
+        Typeface calcFont = Typeface.createFromAsset(getAssets(), "fonts/Baby-Universe.ttf");
+        input_0.setTypeface(calcFont);
+        input_1.setTypeface(calcFont);
+        input_2.setTypeface(calcFont);
+        input_3.setTypeface(calcFont);
+        input_4.setTypeface(calcFont);
+        input_5.setTypeface(calcFont);
+        input_6.setTypeface(calcFont);
+        input_7.setTypeface(calcFont);
+        input_8.setTypeface(calcFont);
+        input_9.setTypeface(calcFont);
+        input_decimal.setTypeface(calcFont);
+        input_positive_negative.setTypeface(calcFont);
+        input_add.setTypeface(calcFont);
+        input_subtract.setTypeface(calcFont);
+        input_multiply.setTypeface(calcFont);
+        input_divide.setTypeface(calcFont);
+        input_equals.setTypeface(calcFont);
+        input_clear.setTypeface(calcFont);
+        text_calculation.setTypeface(calcFont);
+
+
+
+        Toast.makeText(MainActivity.this, "FactCalculator initiating, oh Master...", Toast.LENGTH_LONG).show();
 
         // when the 0 button gets clicked
         input_0.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 1 button gets clicked
-        input_1 = (Button) findViewById(R.id.button_1);
         input_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 2 button gets clicked
-        input_2 = (Button) findViewById(R.id.button_2);
         input_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 3 button gets clicked
-        input_3 = (Button) findViewById(R.id.button_3);
         input_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 4 button gets clicked
-        input_4 = (Button) findViewById(R.id.button_4);
         input_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 5 button gets clicked
-        input_5 = (Button) findViewById(R.id.button_5);
         input_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 6 button gets clicked
-        input_6 = (Button) findViewById(R.id.button_6);
         input_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 7 button gets clicked
-        input_7 = (Button) findViewById(R.id.button_7);
         input_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 8 button gets clicked
-        input_8 = (Button) findViewById(R.id.button_8);
         input_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -196,7 +224,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the 9 button gets clicked
-        input_9 = (Button) findViewById(R.id.button_9);
         input_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -211,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the decimal button gets clicked
-        input_decimal = (Button) findViewById(R.id.button_decimal);
         input_decimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -269,7 +295,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the positive/negative button gets clicked
-        input_positive_negative = (Button) findViewById(R.id.button_positive_negative);
         input_positive_negative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -371,7 +396,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the + button gets clicked
-        input_add = (Button) findViewById(R.id.button_add);
         input_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -524,7 +548,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the - button gets clicked
-        input_subtract = (Button) findViewById(R.id.button_subtract);
         input_subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -677,7 +700,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the x button gets clicked
-        input_multiply = (Button) findViewById(R.id.button_multiply);
         input_multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -830,7 +852,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the : button gets clicked
-        input_divide = (Button) findViewById(R.id.button_divide);
         input_divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -983,7 +1004,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the = button gets clicked
-        input_equals = (Button) findViewById(R.id.button_equals);
         input_equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1084,7 +1104,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // when the C button gets clicked
-        input_clear = (Button) findViewById(R.id.button_clear);
         input_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
