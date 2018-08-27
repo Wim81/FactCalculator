@@ -1,7 +1,9 @@
 package com.verpoorten.wim.factcalculator;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Typeface;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -1288,8 +1290,15 @@ public class MainActivity extends AppCompatActivity {
                 int result_integer = (int) result_converted_floored;
                 String result_api = Integer.toString(result_integer);
                 String api_call = "http://numbersapi.com/" + result_api;
+                boolean internet_connection = checkInternetConnection();
 
-                new JsonTask().execute(api_call);
+                if( internet_connection == true ) {
+                    new JsonTask().execute(api_call);
+                } else {
+                    String no_internet_text = "We can only offer you useless facts when you have an internet connection...";
+                    text_api.setText(no_internet_text);
+                }
+
             }
 
         });
@@ -1374,6 +1383,21 @@ public class MainActivity extends AppCompatActivity {
             // tiny correction because API result always includes a nasty enter at the end which is not needed
             result = result.substring(0, result.length()-1);
             text_api.setText(result);
+        }
+    }
+
+
+    // check internet connection
+
+    private boolean checkInternetConnection() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        // test for connection
+        if (cm.getActiveNetworkInfo() != null
+                && cm.getActiveNetworkInfo().isAvailable()
+                && cm.getActiveNetworkInfo().isConnected()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
