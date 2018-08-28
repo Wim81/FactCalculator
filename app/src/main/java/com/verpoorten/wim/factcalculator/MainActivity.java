@@ -1259,12 +1259,12 @@ public class MainActivity extends AppCompatActivity {
                     updateTextCalculation(new_value);
 
                 } else if ( init_value.contains(":") ) {
-
                     String getallen[] = init_value.split(":");
                     float getal1 =  Float.parseFloat( getallen[0] );
                     float getal2 =  Float.parseFloat( getallen[1] );
                     if (getal2 == 0) {
                         Toast.makeText(MainActivity.this, "Division by zero? I don't think so, amigo!", Toast.LENGTH_SHORT).show();
+                        return;
                     } else {
                         float uitkomst = getal1 / getal2;
                         String new_value = Float.toString(uitkomst);
@@ -1284,6 +1284,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // let's get some API data!
+
                 String result = text_calculation.getText().toString();
                 float result_converted = Float.parseFloat(result);
                 double result_converted_floored = Math.floor(result_converted);
@@ -1298,7 +1299,6 @@ public class MainActivity extends AppCompatActivity {
                     String no_internet_text = "We can only offer you useless facts when you have an internet connection...";
                     text_api.setText(no_internet_text);
                 }
-
             }
 
         });
