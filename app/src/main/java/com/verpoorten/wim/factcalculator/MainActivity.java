@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog pd;
     //endregion
 
-    //function for updateing text_calculation
+    // function for updateing text_calculation
     public void updateTextCalculation(String new_value) {
         text_calculation.setText(new_value);
         if(new_value.length() > 24) {
@@ -60,6 +60,22 @@ public class MainActivity extends AppCompatActivity {
             text_calculation.setTextSize(100);
         }
     }
+
+    // function for checking internet connection & fetching API data
+    public void checkInternetAndFetchApiData(float uitkomst) {
+        double result_converted_floored = Math.floor(uitkomst);
+        int result_integer = (int) result_converted_floored;
+        String result_api = Integer.toString(result_integer);
+        String api_call = "http://numbersapi.com/" + result_api;
+        boolean internet_connection = checkInternetConnection();
+        if( internet_connection == true ) {
+            new JsonTask().execute(api_call);
+        } else {
+            String no_internet_text = "We can only offer you useless facts when you have an internet connection...";
+            text_api.setText(no_internet_text);
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -438,14 +454,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "+";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
@@ -466,14 +475,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
@@ -488,14 +490,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
@@ -509,14 +504,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
@@ -530,14 +518,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else {
                         // no other options
@@ -555,14 +536,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "+";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains(":") ) {
 
@@ -579,14 +553,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "+";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
                     }
 
                 } else {
@@ -621,14 +588,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "-";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
@@ -653,14 +613,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
@@ -675,14 +628,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
@@ -696,14 +642,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
@@ -717,14 +656,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else {
                         // no other options
@@ -742,14 +674,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "-";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains(":") ) {
 
@@ -766,14 +691,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "-";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
                     }
 
                 } else {
@@ -809,14 +727,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "x";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
@@ -841,14 +752,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
@@ -863,14 +767,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
@@ -884,14 +781,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
@@ -905,15 +795,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
-
+                        checkInternetAndFetchApiData(uitkomst);
                     } else {
                         // no other options
                     }
@@ -930,14 +812,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + "x";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains(":") ) {
 
@@ -954,15 +829,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + "x";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
-
+                        checkInternetAndFetchApiData(uitkomst);
                     }
                 } else {
                     String new_value = init_value + "x";
@@ -997,14 +864,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + ":";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains("-") && !init_value.substring(init_value.length()-1).equals("-") && init_value.indexOf("+") < 0 && init_value.indexOf("x") < 0 && init_value.indexOf(":") < 0 ) {
 
@@ -1029,14 +889,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 3) ) {
                         // er zijn 3 min tekens
@@ -1051,14 +904,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 2) ) {
                         // er zijn 2 min tekens maar geen staat vooraan
@@ -1072,14 +918,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else if ( !init_value.substring(0,1).equals("-") && (init_value.length() - init_value.replace("-", "").length() == 1) ) {
                         // er is 1 min teken maar niet vooraan
@@ -1093,14 +932,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
 
                     } else {
                         // no other options
@@ -1118,14 +950,7 @@ public class MainActivity extends AppCompatActivity {
                         new_value = new_value.substring(0, new_value.length()-3) + ":";
                     }
                     updateTextCalculation(new_value);
-
-                    // let's get some API data!
-                    double result_converted_floored = Math.floor(uitkomst);
-                    int result_integer = (int) result_converted_floored;
-                    String result_api = Integer.toString(result_integer);
-                    String api_call = "http://numbersapi.com/" + result_api;
-
-                    new JsonTask().execute(api_call);
+                    checkInternetAndFetchApiData(uitkomst);
 
                 } else if ( init_value.contains(":") ) {
 
@@ -1142,14 +967,7 @@ public class MainActivity extends AppCompatActivity {
                             new_value = new_value.substring(0, new_value.length()-3) + ":";
                         }
                         updateTextCalculation(new_value);
-
-                        // let's get some API data!
-                        double result_converted_floored = Math.floor(uitkomst);
-                        int result_integer = (int) result_converted_floored;
-                        String result_api = Integer.toString(result_integer);
-                        String api_call = "http://numbersapi.com/" + result_api;
-
-                        new JsonTask().execute(api_call);
+                        checkInternetAndFetchApiData(uitkomst);
                     }
 
                 } else {
@@ -1283,22 +1101,10 @@ public class MainActivity extends AppCompatActivity {
                     updateTextCalculation(new_value);
                 }
 
-                // let's get some API data!
-
                 String result = text_calculation.getText().toString();
                 float result_converted = Float.parseFloat(result);
-                double result_converted_floored = Math.floor(result_converted);
-                int result_integer = (int) result_converted_floored;
-                String result_api = Integer.toString(result_integer);
-                String api_call = "http://numbersapi.com/" + result_api;
-                boolean internet_connection = checkInternetConnection();
+                checkInternetAndFetchApiData(result_converted);
 
-                if( internet_connection == true ) {
-                    new JsonTask().execute(api_call);
-                } else {
-                    String no_internet_text = "We can only offer you useless facts when you have an internet connection...";
-                    text_api.setText(no_internet_text);
-                }
             }
 
         });
